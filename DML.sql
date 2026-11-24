@@ -1,0 +1,39 @@
+use bankingdb;
+INSERT INTO CUSTOMERS(CustomerID, FIRSTNAME, LASTNAME, EMAIL, PHONE, Date_Of_Birth)
+VALUES(101,'RAHUL','SHARMA','RAHUL@GMAIL.COM',9867353678,'1998-09-15');
+INSERT INTO ACCOUNTS(Account_ID, CUSTOMERID, ACCOUNT_TYPE, BALANCE)VALUES(201,101,'Saving',25000);
+select * from ACCOUNTS;
+
+SET SQL_SAFE_UPDATES=0;
+UPDATE CUSTOMERS
+SET PHONE='9998887776'
+WHERE CustomerID=101;
+SELECT * FROM CUSTOMERS;
+UPDATE CUSTOMERS
+SET EMAIL='RAHUL.SHARMA@GMAIL.COM' WHERE CustomerID=101;
+
+DELETE FROM Accounts
+WHERE Account_ID = 201;
+SELECT * FROM Accounts;
+USE BANKINGDB;
+INSERT INTO CUSTOMERS(CustomerID, FIRSTNAME, LASTNAME, EMAIL, PHONE, Date_Of_Birth)
+VALUES(102,'ANU','CATHY','CATHY@gmail.com',9856346783,'1998-08-14'),(103,'manju','anu','anu@gmail.com',9876324567,'1995-09-12'),(104, 'kavya', 'priya', 'kavya@gmail.com', 9876543210, '1998-04-21'),
+(105, 'arun', 'kumar', 'arun@gmail.com', 9786543210, '1996-07-15'),
+(106, 'divya', 'lakshmi', 'divya@gmail.com', 9898765432, '2000-11-25');
+
+INSERT INTO ACCOUNTS (Account_ID, CUSTOMERID, ACCOUNT_TYPE, BALANCE)
+VALUES
+(201, 101, 'Saving', 25000),
+(202, 102, 'Current', 45000),
+(203, 103, 'Saving', 30000),
+(204, 104, 'Current', 60000),
+(205, 105, 'Saving', 15000);
+
+INSERT INTO Transactions
+(TransactionID, TransactionDate, Amount, TransactionType)
+VALUES
+(301, '2025-05-10', 5000.00, 'Deposit'),
+(302, '2025-05-11', 15000.00, 'Withdrawal'),
+(303, '2025-05-12', 10000.00, 'Deposit'),
+(304, '2025-05-13', 20000.00, 'Withdrawal'),
+(305, '2025-05-14', 7000.00, 'Deposit');
